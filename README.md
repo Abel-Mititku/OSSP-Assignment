@@ -178,7 +178,8 @@ In my project, I used **VMware Workstation (Type 2)** to install Rocky Linux 9.5
 - ## Understanding System Calls
 - Here is how I did the implementation:
 - To write a C program that uses the exec system call to replace the current process with a new one. 
-This demonstrates a key concept in Linux system programming: process replacement. 
+This demonstrates a key concept in Linux system programming: process replacement.
+
 I used execvp(), a member of the exec family of system calls, which allows replacing the current 
 process image with a new program, such as ls, echo, or any other executable. 
 Here is a step by step process of the execution:
@@ -200,7 +201,7 @@ return 1;
 “This program uses execvp() to replace itself with the ls -l command. If execvp() fails, it 
 prints an error. ”
 - [Issues Faced and Implementation Process](#issues-faced-and-implementation-process)
-- ## Issues Faced
+- ## Issues Faced and the implementation process
 - Issue 1: Compilation Errors on #include lines 
 Problem: 
 When compiling, I got errors like: 
