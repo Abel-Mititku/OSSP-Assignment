@@ -191,17 +191,17 @@ minimal installation I logged in as the root user.
 
 2. Creating the C Source File
  
-I used vi to create a file named replace.c (I used nano but didn’t work):
-“vi replace.c”
-then I wrote this C code: 
-#include <stdio.h> 
-#include <unistd.h> 
-int main() { 
-char *args[] = {"ls", "-l", NULL}; 
-execvp(args[0], args); 
-perror("execvp failed"); 
-return 1; 
-} 
+I used vi to create a file named replace.c (I used nano but didn’t work):  
+“vi replace.c”  
+then I wrote this C code:  
+#include <stdio.h>  
+#include <unistd.h>  
+int main() {  
+char *args[] = {"ls", "-l", NULL};  
+execvp(args[0], args);  
+perror("execvp failed");  
+return 1;  
+}  
 “This program uses execvp() to replace itself with the ls -l command. If execvp() fails, it 
 prints an error. ”
 - [Issues Faced and Implementation Process](#issues-faced-and-implementation-process)
