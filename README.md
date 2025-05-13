@@ -21,14 +21,39 @@ Hardware: - Intel/AMD CPU - 4 GB RAM - 20 GB Disk space - VMware Workstation ins
 Software: - Rocky Linux 9.5 ISO - GCC (compiler) - Basic terminal tools (vim/nano, dnf, etc.) 
 [Installation Steps](#installation-steps)
  ## Installation Steps
+ 1,Downloaded Rocky Linux ISO from official site. (I downloaded the minimal version )
+ ![image](https://github.com/user-attachments/assets/9bd1bf92-30bb-4dc5-b5b4-68c8e3726348)
+I chose to install the minimal version of Rocky Linux Server by clicking on the minimal version. I did 
+install the minimal version because the system has all the requirements I needed for my assignment. In 
+addition the system is user friendly and has good graphical user interface (by default) and comes with 
+command line interface. But also a user can install GUI. 
+2,Created a new virtual machine in VMware: - OS: Linux, Version: CentOS 8 64-bit - Disk: 20 GB, RAM: 2 
+![image](https://github.com/user-attachments/assets/1712f7ac-a4fc-4c41-bdef-5df775af7ac8)
+VMware was user friendly virtual machine it did not took me a lot of energy to understand how It 
+actually works. As I double clicked on the VM I clicked on new machine then I chose a disk where I 
+stored the ISO. Then I did set up the VM I scheduled the RAM,CPU,storage device and other 
+resources, to make the VM more efficient and fast loading speed. 
+3,Followed the GUI installer: - Chose "Minimal Install" - Enabled network and set root password 
+![image](https://github.com/user-attachments/assets/99821fba-a6b6-4c69-bbb7-f60d198876e8)
+The above snnipet shows the installation process as I expected the installation took a bit long time. As I 
+finished the installation the ISO displayed a page where I can choose a language to preceed the process. 
+The next page was where I can create my VM account. On this page the required information was Full 
+Name,Username and password. I entered the required information and continued my process. 
+- Here is how I created my VM account I created my virtual machine account.
+- ![image](https://github.com/user-attachments/assets/706dce1e-002d-4b2a-8533-244e621970dd)
+4,Completed installation and rebooted into the OS.
 [Issues](#issues)
   ## Issues
  Issues Faced: 
 1,ISO verification failed. 
 2,Terminal didn’t show password while logging in. 
 As I entered the required information to log in into my VM I was not able to type my password. 
+![image](https://github.com/user-attachments/assets/87cd8ea9-e43b-47b9-a96c-839330908193)
+
 3,Exec program output wasn’t showing. 
 4,gcc not installed by default. (while trying to compile the c file I written to do the exec system call)
+![image](https://github.com/user-attachments/assets/034119f8-f355-4267-9654-9360dbd20226)
+
 5,The file was written or edited using a Windows-based editor (like Notepad), which uses Windows- 
 style line endings (\r\n). (The c file I used to execute the exec call).
 - [Solutions](#solutions)
@@ -40,10 +65,16 @@ Started the virtual machine with the Rocky Linux ISO attached. - Waited for the 
 I selected: 
 “Install Rocky Linux” 
 using the arrow key. 
-2,Installed gcc using dnf install gcc.But after installing the gcc I faced another issue which was due to The file was written or edited using a 
-Windows-based editor so I had to download dos2unix.Then I did the compilation successfully. 
+2,Installed gcc using dnf install gcc.
+![image](https://github.com/user-attachments/assets/833f5a61-eb4b-431a-afb3-6ba3af70b105)
+
+But after installing the gcc I faced another issue which was due to The file was written or edited using a 
+Windows-based editor so I had to download dos2unix.
+![image](https://github.com/user-attachments/assets/e5741873-07d3-4329-9133-50006f416524)
+
+Then I did the compilation successfully. 
 3,Understood that Linux hides password input (normal behavior). 
-       4,Used strace and execvp properly to confirm system call execution. 
+4,Used strace and execvp properly to confirm system call execution. 
 
 - [Filesystem](#filesystem)
 - ## Filesystem
