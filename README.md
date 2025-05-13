@@ -1,8 +1,8 @@
 # Main Documentation
 
 - [Introduction](#introduction)
-- ## Introduction
-- Rocky Linux 9.5 in VMware Workstation 
+ ## Introduction
+Rocky Linux 9.5 in VMware Workstation 
 Rocky Linux is an open-source, free, enterprise-class Linux operating system. It's a bug-for-bug 
 compatible alternative to Red Hat Enterprise Linux (RHEL), intended for use in production servers and 
 data centers. 
