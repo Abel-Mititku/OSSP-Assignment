@@ -188,9 +188,7 @@ process image with a new program, such as ls, echo, or any other executable.
 
 I installed Rocky Linux 9.5 inside a VMware Workstation virtual machine. After booting into the 
 minimal installation I logged in as the root user.  
-
-2. Creating the C Source File
- 
+2. Creating the C Source File  
 I used vi to create a file named replace.c (I used nano but didn’t work):  
 “vi replace.c”  
 then I wrote this C code:  
@@ -205,56 +203,58 @@ return 1;
 “This program uses execvp() to replace itself with the ls -l command. If execvp() fails, it 
 prints an error. ”
 - [Issues Faced and Implementation Process](#issues-faced-and-implementation-process)
-- ## Issues Faced and the implementation process
-- Issue 1: Compilation Errors on #include lines 
-Problem: 
-When compiling, I got errors like: 
-error: expected identifier or ‘(’ before ‘include’ 
-Cause: 
-I mistakenly wrote include<stdio.h> without the # symbol. 
-Fix: 
-I edited the file and corrected the syntax to: 
-#include <stdio.h>
-Issue 2: compilation still failed after fix 
-Issue: 
-Even with the correct syntax, the compiler continued showing the same error. 
-Cause: 
-The file had Windows-style line endings (\r\n) instead of Unix-style (\n), 
-which confused the compiler. 
-Fix: 
-I did 
-install dos2unix and converted the file into unix file system for compilation.
+- ## Issues Faced and the implementation process  
+- Issue 1: Compilation Errors on #include lines  
+**Problem:**
+When compiling, I got errors like:  
+error: expected identifier or ‘(’ before ‘include’  
+**Cause:**
+I mistakenly wrote include<stdio.h> without the # symbol.  
+**Fix:**
+I edited the file and corrected the syntax to:  
+#include <stdio.h>  
+Issue 2: compilation still failed after fix  
+**Issue:**
+Even with the correct syntax, the compiler continued showing the same error.  
+**Cause:**
+The file had Windows-style line endings (\r\n) instead of Unix-style (\n),  
+which confused the compiler.  
+**Fix:**
+I did install dos2unix and converted the file into unix file system for compilation.  
 ![image](https://github.com/user-attachments/assets/b6dd0922-3e42-47b8-87a7-71d6862d2862)
 
-then I did convert the file using “dos2unix replace.c” 
-Issue: gcc compiler was not installed bt default. 
-Fix: install the gcc using : 
-“dnf install gcc -y” 
+then I did convert the file using “dos2unix replace.c”  
+**Issue:**  
+gcc compiler was not installed bt default. 
+**Fix:**  
+**install the gcc using :**
+“dnf install gcc -y”  
 ![image](https://github.com/user-attachments/assets/c2fa87db-be36-49fb-ae4f-329227bee946)
 
-- After this, the code compiled successfully using: 
-“gcc replace.c -o replace” 
-- Issue 3: no output when running the code: 
+- After this, the code compiled successfully using:  
+“gcc replace.c -o replace”  
+  **Issue 3:**
+no output when running the code:
 **Problem:** 
-Running ./replace produced no visible output, making it seem like the program didn’t work. 
+Running ./replace produced no visible output, making it seem like the program didn’t work.  
 **Cause:**
 This is actually expected behavior. If execvp() is successful, the process is fully replaced, and none 
-of the original code continues to run. 
+of the original code continues to run.  
 **Fix:** 
-I added debug tests by replacing ls -l with: 
-“char *args[] = {"echo", "Hello from exec!", NULL};” 
-After doing so the output clearly showed: 
-“Hello from exec!” 
+I added debug tests by replacing ls -l with:  
+“char *args[] = {"echo", "Hello from exec!", NULL};”  
+After doing so the output clearly showed:  
+“Hello from exec!”  
 **I also used:** 
-“strace ./replace” 
-to confirm that execvp() executed correctly and called execve() under the hood. 
+“strace ./replace”  
+to confirm that execvp() executed correctly and called execve() under the hood.  
 **The final working code:**
-#include <stdio.h> 
-#include <unistd.h> 
-int main() { 
-char *args[] = {"ls", "-l", NULL}; 
-execvp(args[0], args); 
-perror("execvp failed"); 
-return 1; 
-}
+#include <stdio.h>  
+#include <unistd.h>  
+int main() {  
+char *args[] = {"ls", "-l", NULL};  
+execvp(args[0], args);  
+perror("execvp failed");  
+return 1;  
+}  
 
