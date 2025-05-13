@@ -1,8 +1,21 @@
-# OSSP-Assignment
+# Main Documentation
 
-Rocky Linux 9.5 in VMware Workstation
+- [Introduction](#introduction)
+- [Objectives](#objectives)
+- [Requirements](#requirements)
+- [Installation Steps](#installation-steps)
+- [Issues](#issues)
+- [Solutions](#solutions)
+- [Filesystem](#filesystem)
+- [Advantages and Disadvantages](#advantages-and-disadvantages)
+- [Conclusion](#conclusion)
+- [Future Outlook](#future-outlook)
+- [Virtualization](#virtualization)
+- [UNIX Standardization](#unix-standardization)
 
-Rocky Linux is an open-source, free, enterprise-class Linux operating system. It's a bug-for-bug 
-compatible alternative to Red Hat Enterprise Linux (RHEL), intended for use in production servers and 
-data centers. 
-Advantages Of Rocky Linux Server: - stable: great for long-term, stable environments. - Free: the product is free and open-source. - Great for servers: good for web servers, databases, virtualization, file servers, etc. - Large community: Active development and support. - Security focused: regular update.
+# System Call Implementation
+
+- [Understanding System Calls](#understanding-system-calls)
+- [The setpgid() System Call](#the-setpgid-system-call)
+- [Implementation Process](#implementation-process)
+
