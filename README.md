@@ -228,23 +228,23 @@ Fix: install the gcc using :
 “dnf install gcc -y” 
 ![image](https://github.com/user-attachments/assets/c2fa87db-be36-49fb-ae4f-329227bee946)
 
-After this, the code compiled successfully using: 
+- After this, the code compiled successfully using: 
 “gcc replace.c -o replace” 
-Issue 3: no output when running the code: 
-Problem: 
+- Issue 3: no output when running the code: 
+**Problem:** 
 Running ./replace produced no visible output, making it seem like the program didn’t work. 
-Cause: 
+**Cause:**
 This is actually expected behavior. If execvp() is successful, the process is fully replaced, and none 
 of the original code continues to run. 
-Fix: 
+**Fix:** 
 I added debug tests by replacing ls -l with: 
 “char *args[] = {"echo", "Hello from exec!", NULL};” 
 After doing so the output clearly showed: 
 “Hello from exec!” 
-I also used: 
+**I also used:** 
 “strace ./replace” 
 to confirm that execvp() executed correctly and called execve() under the hood. 
-The final working code: 
+**The final working code:**
 #include <stdio.h> 
 #include <unistd.h> 
 int main() { 
