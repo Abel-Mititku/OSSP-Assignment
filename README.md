@@ -182,13 +182,13 @@ This demonstrates a key concept in Linux system programming: process replacement
 
 I used execvp(), a member of the exec family of system calls, which allows replacing the current 
 process image with a new program, such as ls, echo, or any other executable. 
-Here is a step by step process of the execution:
+**Here is a step by step process of the execution:**
 1,set up the environment: 
 I installed Rocky Linux 9.5 inside a VMware Workstation virtual machine. After booting into the 
-minimal installation I logged in as the root user. 
-2. Creating the C Source File 
-I used vi to create a file named replace.c (I used nano but didn’t work): 
-“vi replace.c” 
+minimal installation I logged in as the root user.
+2. Creating the C Source File
+I used vi to create a file named replace.c (I used nano but didn’t work):
+“vi replace.c”
 then I wrote this C code: 
 #include <stdio.h> 
 #include <unistd.h> 
