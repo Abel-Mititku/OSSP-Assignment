@@ -1,3 +1,29 @@
+# Welcome to My GitHub Profile! 👋
+
+## About Me
+Hello, I'm **Abel Mitiku** 👋! I’m a software engineering student with a focus on **front-end development**. I am passionate about coding and learning new technologies.
+
+- **Name**: Abel Mitiku
+- **ID**: BDU1601024
+- **Operating System**: Rocky Linux
+
+## Contact Me
+- **Email**: [abelmitiku35@gamil.com]
+- **LinkedIn**: [Abel Mitiku]
+
+Thanks for visiting my GitHub! 🚀
+
+
+
+
+
+
+
+  
+  
+  
+
+
 ## Quick Summary
 ### A. OS Installation
 Installed Rocky Linux 9.5 on VMware with minimal setup, configured network, and resolved installation issues like ISO check and gcc installation.
