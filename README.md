@@ -1,6 +1,8 @@
 ## Quick Summary
 ### A. OS Installation
-Installed Rocky Linux 9.5 on VMware with minimal setup, configured network, and resolved installation issues like ISO check and gcc installation.
+I installed Rocky Linux 9.5 on VMware Workstation using a minimal setup configuration. During the process, I configured the network manually and resolved common installation issues such as the ISO checksum verification and missing dependencies. After installation, I ensured the system was updated and installed essential development tools like gcc.
 
 ### B. System Call
-Wrote a C program using `execvp()` to demonstrate process replacement. Faced line-ending and compilation issues but fixed them using `dos2unix` and installed `gcc`.
+For the system call part, I wrote a C program that demonstrates process replacement using the execvp() function. Initially, I faced compilation errors and line-ending problems due to file formatting, but I resolved these using the dos2unix tool and by installing the necessary packages. The final program successfully executes a new process by replacing the current process image.
+
+
